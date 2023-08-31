@@ -1,0 +1,20 @@
+.topPortion3{
+    display: flex;
+    margin-left: 90px;
+    margin-top: 30px;
+}
+.divElaments{
+    margin: auto;
+    gap: 20px;
+    display: flex;
+    margin-top: 25px
+}
+.Bg{
+    text-align: center;
+    cursor: pointer;
+}
+
+input[type = radio]{
+    accent-color: red;
+    cursor: pointer;
+}

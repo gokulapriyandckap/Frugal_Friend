@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --background-color:#F4F7FA ;
+    --Container-back-ground-color:#FFFFFF;
+    --primary-Text-color-:#223F64;
+    --secondary-Text-color:#223F64;
+    --Text-color-1-:#000;
+    --Text-color-2-:#25384F;
+    --Text-color-3-:#3F88D8;
+
+}
+
+
+
+.reportContent{
+    background-color: var(--Container-back-ground-color);
+    height:95vh;
+    width: 170vh;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.04), 0px 2px 6px 0px rgba(0, 0, 0, 0.04), 0px 16px 24px 0px rgba(0, 0, 0, 0.06);
+    padding: 30px;
+}
+.topPortion{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.transactionHeading{
+    color:var(--primary-Text-color-);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 30px;
+}
+.searchBar{
+    width: 200px;
+    height: 40px;
+    outline: none;
+    padding-left: 8px;
+    border-radius: 8.28px;
+    background:var(--Container-back-ground-color);
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.exportBtn{
+    width: 140px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #3F88D8;
+    background: #FFF;
+    color: #3F88D8;
+    font-size: 12px;
+    font-weight: 400;
+}
+.exportBtn:hover{
+    background: #3F88D8;
+    color: #FFF;
+}
+.rightSide{
+    display: flex;
+    gap: 40px;
+    margin-right: 70px;
+}
+.topPortion2{
+    margin-top: 2rem;
+    display: flex;
+    gap: 140px;
+    justify-content:flex-end ;
+    margin-right: 70px;
+}
+.input{
+    accent-color: red;
+    width: 20px;
+    height: 20px;
+}
+::placeholder{
+    font-size: 12px;
+    text-align: center;
+}
+label{
+    color: var(--Text-color-2-);
+}
+.inputs{
+    display: flex;
+    gap: 5px;
+}
+.list{
+    cursor: pointer;
+}
+.topPortion3{
+    display: flex;
+}
+.divElaments{
+    margin: auto;
+    gap: 20px;
+    display: flex;
+    margin-top: 2rem
+}
+.Bg{
+    background: #F5F5F5;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+.month{
+    color: var(--Text-color-2-);
+    padding: 10px;
+}
+
+.paymentDetails{
+    margin-top: 2rem;
+}
+.report{
+    width: 100%;
+}
+.tableHeading{
+    border-radius: 10px;
+    background: #F5F5F5;
+    height: 40px;
+}
+td{
+    text-align: center;
+    padding-top: 20px;
+}
