@@ -6,9 +6,23 @@ class UserModule extends Database
 {
 
 
-    public function logincheck($data)
+    public function loginCheck($data)
     {
+        $email = $data['email'];
+        $password = $data['password'];
 
+        $fetch = $this->db->query("SELECT * from users where email ='$email' and  password='$password'");
+        $datas = $fetch->fetchall();
+
+        if ($datas) {
+            $_SESSION['username'] = $datas[0]['name'];
+            $_SESSION['userid'] = $datas[0]['id'];
+            var_dump($_SESSION['username'],$_SESSION['userid']);
+
+            require 'view/home.php';
+        } else {
+            header('location:/login');
+        }
     }
 
     public function signUp($data)

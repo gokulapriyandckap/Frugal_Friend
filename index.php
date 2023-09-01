@@ -17,5 +17,8 @@ $router->get('/signup', 'signup');
 
 $router->get('/signup_user', 'signupLogic');
 
+$router->post('/loginCheck', 'loginCheck');
+
+
 
 $router->routing();

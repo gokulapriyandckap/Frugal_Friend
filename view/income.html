@@ -11,6 +11,9 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="../CSS/income.css">
   <script src="https://kit.fontawesome.com/53c4033439.js" crossorigin="anonymous"></script>
+  <!-- For date picker -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
   <title>home page</title>
 </head>
 
@@ -53,21 +56,23 @@
           </a>
         </li>
         <li class="add-btn-div">
-            <button id="add-btn"  class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-              stroke="currentColor" className="w-3 h-3" style="width: 26px;">
+          <a id="add-btn"
+            class="flex items-center p-2 w-69 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+              stroke="currentColor" className="w-6 h-6" style="width: 26px;">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
-            <span class="flex-1 ml-3 whitespace-nowrap add-btn-name">Add</span>
-            </button>
+            <span class="flex-1 ml-3 whitespace-nowrap add-btn-name  cursor-pointer">Add</span>
+          </a>
           <div class="income-expence-btns-div">
             <div class="btnDiv">
-              <button>1</button>
+              <button class="material-symbols-outlined incomeSymble">trending_up</button>
+              <a href="#" class="atag Income">Incomes</a>
             </div>
             <div class="btnDiv">
-              <button>1</button>
+              <button class="material-symbols-outlined expensesSymble">trending_down</button>
+              <a href="#" class="atag Expenses">Expenses</a>
             </div>
-
           </div>
         </li>
         <li style="margin-top: 23pc;">
@@ -86,19 +91,65 @@
     </div>
   </aside>
   <!-- main contant -->
-  <div class="p-4 sm:ml-64" style="display: flex;">
-    <!-- balance and graph -->
-    <div class="records">
-      <h1>hello I am dhanush</h1>
+  <div class="p-10 sm:ml-64 relative" style="display: flex;">
+    <!-- Income form-->
+    <div class="incomeContainer">
+      <div class="incomeDetails">
+        <h1 class="transactionHeading">Transaction Mode</h1>
+        <div class="transactionType_buttons_div">
+          <button class="transactionType_buttons" value="Cash" >Cash</button>
+          <button class="transactionType_buttons" value="Card">Card</button>
+          <button class="transactionType_buttons" value="Bank">Bank</button>
+        </div>
+        <div class="inputContainer">
+          <div class="divDate ">
+            <input type="datetime-local" class="inputsFeild" placeholder="06-08-2023">
+          </div>
+          <div>
+            <input type="text" name="Category-input" id="Category-input" required="required" class="input" >
+            <label for="Category-input" id="Category-label" class="label">Category</label>
+          </div>
+          <div>
+            <input type="number" name="Amount-input" id="Amount-input" required="required" class="input">
+            <label for="Amount-input" class="label">Amount</label>
+          </div>
+          <div class="divdetails">
+            <input type="text" class="inputsFeild" placeholder="Enter Details (Bill No, Quentity) &#128270;">
+          </div>
+          <div class="saveButton_div">
+            <button class="save_and_newButton">SAVE AND NEW</button>
+            <button class="saveButton ">SAVE</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- overall balance and dountchart -->
-    <div class="report" style="margin-left: 30px;">
-      <h1>hi I am sanjay</h1>
+    <!-- other details -->
+    <div class="others Category relative p-8 " style="margin-left: 30px;" hidden>
+      <div class="categoryDiv ">
+        <div class="allCategory_container">
+          <h2 class="font-medium text-2xl">Select Category</h2>
+          <div class="categoryLists "></div>
+          <div class="plus-btn w-12 h-12">
+            <span class="material-symbols-outlined categoryAddicon ">add</span>
+          </div>
+        </div>
+        <div class="newCategory_Container">
+          <div class="categoryBox">
+            <span class="material-symbols-outlined closeCategorybox">close</span>
+              <div>
+                <input type="text" name="newCategory-input" id="Category-input" required="required" class="newCategory">
+                <label for="newCategory-input" class="newCategory_lable">Category</label>
+              </div>
+            <button class="categorySubbmit_button">ADD CATEGORY</button>
+          </div>    
+        </div>
+      </div>
     </div>
-
-
   </div>
 </body>
+<!-- Script for Date picker --->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 <script src="../Js/income.js"></script>
 
 </html>

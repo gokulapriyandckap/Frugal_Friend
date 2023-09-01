@@ -15,6 +15,11 @@ class UserController
     {
         require "view/login.html";
     }
+    public function loginCheck()
+        {
+            $this->userModel->loginCheck($_POST);
+        }
+
 
     public function signup()
     {
@@ -23,5 +28,9 @@ class UserController
     public function signupLogic(){
         $this->userModel->signUp($_POST);
     }
+    public function home(){
+        require 'view/home.php';
+    }
+
 
 }
