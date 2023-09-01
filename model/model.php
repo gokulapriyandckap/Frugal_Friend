@@ -17,9 +17,8 @@ class UserModule extends Database
         if ($datas) {
             $_SESSION['username'] = $datas[0]['name'];
             $_SESSION['userid'] = $datas[0]['id'];
-            var_dump($_SESSION['username'],$_SESSION['userid']);
 
-            require 'view/home.php';
+            header('location:/home');
         } else {
             header('location:/login');
         }
@@ -37,8 +36,7 @@ class UserModule extends Database
             $email = $data['email'];
             $password = $data['password'];
             $insert = $this->db->query("INSERT INTO users(name,email,password)VALUES ('$username','$email','$password')");
-//            header();
-            echo 'user created';
+            header('location:/');
         }
     }
 }

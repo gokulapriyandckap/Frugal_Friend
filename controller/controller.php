@@ -29,6 +29,7 @@ class UserController
         $this->userModel->signUp($_POST);
     }
     public function home(){
+//        var_dump($_SESSION['username'],$_SESSION['userid']);
         require 'view/home.php';
     }
 
