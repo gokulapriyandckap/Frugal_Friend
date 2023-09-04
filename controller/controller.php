@@ -32,6 +32,11 @@ class UserController
 //        var_dump($_SESSION['username'],$_SESSION['userid']);
         require 'view/home.php';
     }
-
+    public function report(){
+        require 'view/report.html';
+    }
+    public function income(){   
+        require 'view/income.html';
+    }
 
 }

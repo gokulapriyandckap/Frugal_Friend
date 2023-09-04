@@ -21,6 +21,10 @@ $router->post('/loginCheck', 'loginCheck');
 
 $router->post('/home', 'home');
 
+$router -> post('/report','report');
+
+$router -> post('/income','income');
+
 
 
 

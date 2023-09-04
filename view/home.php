@@ -24,7 +24,7 @@
       </a> -->
       <ul class="space-y-2 font-medium">
         <li>
-          <a href="#"
+          <a href="./home"
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" style="background-color: #316AA7;">
             <svg
               class="w-5 h-5 text-white-500 transition duration-75 dark:text-white-400 group-hover:text-white-900 dark:group-hover:text-white"
@@ -39,7 +39,7 @@
           </a>
         </li>
         <li>
-          <a href="#"
+          <a href="/report"
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
               stroke="currentColor" className="w-6 h-6" style="width: 26px;">
@@ -49,16 +49,25 @@
             <span class="flex-1 ml-3 whitespace-nowrap">Report</span>
           </a>
         </li>
-        <li>
-          <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+        <li class="add-btn-div">
+          <a id="add-btn"
+            class="flex items-center p-2 w-69 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-              stroke="currentColor" className="w-3 h-3" style="width: 26px;">
+              stroke="currentColor" className="w-6 h-6" style="width: 26px;">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
-
-            <span class="flex-1 ml-3 whitespace-nowrap">Add</span>
+            <span class="flex-1 ml-3 whitespace-nowrap add-btn-name  cursor-pointer">Add</span>
           </a>
+          <div class="income-expence-btns-div">
+            <div class="btnDiv">
+              <button class="material-symbols-outlined incomeSymble">trending_up</button>
+              <a href="/income" class="atag Income">Incomes</a>
+            </div>
+            <div class="btnDiv">
+              <button class="material-symbols-outlined expensesSymble">trending_down</button>
+              <a href="#" class="atag Expenses">Expenses</a>
+            </div>
+          </div>
         </li>
         <li style="margin-top: 23pc;">
           <a href="#"
