@@ -88,7 +88,7 @@
   <div class="p-4 sm:ml-64" style="display: flex;">
     <!-- balance and graph -->
     <div class="records">
-      <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900" style="color: #223F64;">Welcome Back, <?php echo $usrenameSignup;?> <?= $_SESSION['username']?></h1>
+      <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900" style="color: #223F64;">Welcome Back, <?php echo $usrenameSignup;?> <?= $_SESSION['username']?> 👋</h1>
       <h2 style="color: #223F64;">Here’s what’s happening with your store today.</h2>
       <br>
       <div class="balance_card">
