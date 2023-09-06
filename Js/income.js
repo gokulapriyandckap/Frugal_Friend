@@ -8,7 +8,8 @@ let categoryInput = document.querySelector("#Category-input")
 let catagoryDiv = document.querySelector('.Category')
 let AmountInput = document.querySelector('#Amount-input')
 let categoryLabel = document.querySelector('#Category-label')
-
+let descriptionInput = document.querySelector('.detail')
+let error = document.querySelector(".error")
 addBtn.addEventListener("click", () => {
   if (addBtnName.innerHTML == "Add") {
     addBtnName.innerHTML = "Cancel"
@@ -123,8 +124,35 @@ for(let j=0;j<transaction_button.length;j++){
 
 // ------------------------------------------Code for Date picker ----------------------------------------
 
+let date = document.querySelector('.date')
 config = {
   dateFormat: "d-m-Y",
 }
 flatpickr("input[type = datetime-local ]",config);
 
+
+
+// --------------------------------------- code for form save button---------------------------------------
+
+
+let saveButton = document.querySelector('.saveButton')
+
+saveButton.addEventListener('click',()=>{
+
+
+  transaction_button.forEach((buttons) => {
+    
+    if(buttons.classList.contains("active")){
+      console.log(buttons.value)
+    }
+  })
+
+  console.log(date.value);
+
+  console.log(selectedCatagory)
+
+  console.log(AmountInput.value);
+
+  console.log(descriptionInput.value);
+
+})
