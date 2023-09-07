@@ -18,7 +18,7 @@
     class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar">
     <div class="h-full px-3 py-4 overflow-y-auto bg-white-50 dark:bg-white-800" style="background-color: #223F64;">
-      <a href="https://flowbite.com/" class="flex items-center pl-2.5 mb-5" style="margin-left: 40px; margin-top: 20px;">
+      <a href="/home" class="flex items-center pl-2.5 mb-5" style="margin-left: 40px; margin-top: 20px;">
         <img src="../Images/Frugal_Friend_Logo.png">
       </a>
       <ul class="space-y-2 font-medium">
