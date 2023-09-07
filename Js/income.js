@@ -45,6 +45,7 @@ let categoryName = document.querySelectorAll(".categoryName")
 let categoryAdd_icon = document.querySelector(".categoryAddicon")
 
 let selectedCatagory;
+let catId;
 
 for(let i=0;i<categorDiv.length;i++){
 
@@ -59,6 +60,7 @@ for(let i=0;i<categorDiv.length;i++){
       if(tik[j].id == tarId){
         tik[j].classList.toggle("invisible")
         selectedCatagory = categoryName[j].innerText
+        catId = categoryName[j].id
       }else{
         tik[j].classList.add("invisible")
       }
@@ -139,20 +141,42 @@ let saveButton = document.querySelector('.saveButton')
 
 saveButton.addEventListener('click',()=>{
 
+  let clickedDate  = date.value 
+ let categoryInp = catId
+ let AmountInputVal =   AmountInput.value
+  let descriptionInputVal =   descriptionInput.value
 
   transaction_button.forEach((buttons) => {
     
     if(buttons.classList.contains("active")){
-      console.log(buttons.value)
+      transBtn = buttons.value
+      
     }
   })
+  $.ajax({
+    method:"POST",
+    url: "/incomeDetail",
+    data:{
+      id : 1,
+      dateVal : clickedDate,
+      transactionValue :  transBtn,
+      categoryInp : categoryInp,
+      AmountInputVal : AmountInputVal,
+      descriptionInputVal : descriptionInputVal
+    },
+     success: function(response){
+      // console.log(response)
+      alert("successfully inserted")
+    }
+  });
 
-  console.log(date.value);
 
-  console.log(selectedCatagory)
 
-  console.log(AmountInput.value);
-
-  console.log(descriptionInput.value);
+  // console.log(date.value !== '');
 
 })
+
+
+
+
+

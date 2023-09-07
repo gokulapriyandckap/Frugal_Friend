@@ -29,14 +29,24 @@ class UserController
         $this->userModel->signUp($_POST);
     }
     public function home(){
-//        var_dump($_SESSION['username'],$_SESSION['userid']);
+    //    var_dump($_SESSION['username'],$_SESSION['userid'], $_REQUEST);
         require 'view/home.php';
     }
     public function report(){
-        require 'view/report.html';
+
+        $reportValues = $this->userModel->reportDetails();
+        require 'view/report.php';
     }
     public function income(){   
-        require 'view/income.html';
+        require 'view/income.php';
     }
+
+    public function incomeDetail()  {
+        // var_dump($_REQUEST);
+        $this->userModel->incomeDetail($_REQUEST);
+    }
+
+
+    
 
 }

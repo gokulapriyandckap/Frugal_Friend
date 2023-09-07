@@ -7,10 +7,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="../CSS/income.css">
+  
   <script src="https://kit.fontawesome.com/53c4033439.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <!-- For date picker -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
@@ -23,7 +26,7 @@
   class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
   aria-label="Sidebar">
   <div class="h-full px-3 py-4 overflow-y-auto bg-white-50 dark:bg-white-800" style="background-color: #223F64;">
-    <a href="/home" class="flex items-center pl-2.5 mb-5" style="margin-left: 40px; margin-top: 20px;">
+  <a href="/home" class="flex items-center pl-2.5 mb-5" style="margin-left: 40px; margin-top: 20px;">
       <img src="../Images/Frugal_Friend_Logo.png">
     </a>
     <ul class="space-y-2 font-medium">
@@ -116,7 +119,7 @@
           </div>
           <div class="saveButton_div">
             <button class="save_and_newButton">SAVE AND NEW</button>
-            <button class="saveButton ">SAVE</button>
+            <button class="saveButton" value = <?php echo $usrenameSignup;?> <?= $_SESSION['userid']?>  >SAVE</button>
           </div>
         </div>
       </div>

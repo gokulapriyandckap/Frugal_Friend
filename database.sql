@@ -27,7 +27,8 @@ create table transaction_type(
 CREATE table income_expenses(
                                 id int not null AUTO_INCREMENT PRIMARY KEY,
                                 user_id int,
-                                date date,
+                                transaction_mode varchar (250),
+                                date varchar(250),
                                 category_id int,
                                 transaction_id int,
                                 amount int,

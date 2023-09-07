@@ -39,4 +39,24 @@ class UserModule extends Database
             header('location:/');
         }
     }
+
+    public function incomeDetail($details){
+        // var_dump($details);
+        $userId = $details['id'];
+        $dateVal = $details['dateVal'];
+        $transactionValue = $details['transactionValue'];
+        $categoryInp = $details['categoryInp'];
+        $AmountInputVal = $details['AmountInputVal'];
+        $descriptionInputVal = $details['descriptionInputVal'];
+
+        $insert = $this->db->query("INSERT INTO income_expenses (user_id,amount,description,category_id,transaction_id,date,transaction_mode) VALUES ('$userId','$AmountInputVal','$descriptionInputVal','$categoryInp',1,'$dateVal','$transactionValue')");
+        // header('location:/income');
+    }
+
+    public function reportDetails()  {
+        $userId = $_SESSION['userid'];
+        $val = $this->db->query("SELECT * FROM `income_expenses` WHERE transaction_id = 1 AND user_id = '$userId'");
+        $allValue = $val->fetchAll(PDO::FETCH_OBJ);
+        return $allValue;
+    }
 }

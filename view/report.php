@@ -18,7 +18,7 @@
   class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
   aria-label="Sidebar">
   <div class="h-full px-3 py-4 overflow-y-auto bg-white-50 dark:bg-white-800" style="background-color: #223F64;">
-    <a href="/home" class="flex items-center pl-2.5 mb-5" style="margin-left: 40px; margin-top: 20px;">
+  <a href="/home" class="flex items-center pl-2.5 mb-5" style="margin-left: 40px; margin-top: 20px;">
       <img src="../Images/Frugal_Friend_Logo.png">
     </a>
     <ul class="space-y-2 font-medium">
@@ -127,22 +127,16 @@
               <th>Amount</th>
               <th>Balance</th>
             </tr>
+            <?php foreach ($reportDetails as  $value) : ?>
             <tr>
-              <td>Rent</td>
-              <td>Card</td>
-              <td>House Rent</td>
-              <td>20 Apr 2023</td>
-              <td>₹1,000.00</td>
-              <td>₹9,000.00</td>
+              <td><?php echo $value['category_id'] ?></td>
+              <td><?php echo $value['transaction_mode'] ?></td>
+              <td><?php echo $value['description'] ?></td>
+              <td><?php echo $value['date'] ?></td>
+              <td><?php echo $value['amount'] ?></td>
+              <td><?php echo $value['description'] ?></td>
             </tr>
-            <tr>
-              <td>Rent</td>
-              <td>Card</td>
-              <td>House Rent</td>
-              <td>20 Apr 2023</td>
-              <td>₹1,000.00</td>
-              <td>₹9,000.00</td>
-            </tr>
+            <?php endforeach; ?>
           </table>
         </div>
       </div>

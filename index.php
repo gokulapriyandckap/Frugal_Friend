@@ -25,6 +25,7 @@ $router -> post('/report','report');
 
 $router -> post('/income','income');
 
+$router -> post('/incomeDetail','incomeDetail');
 
 
 
