@@ -46,6 +46,14 @@ class UserController
         $this->userModel->incomeDetail($_REQUEST);
     }
 
+    public function expense(){   
+        require 'view/expense.php';
+    }
+
+    public function expenseDetails()  {
+        $this->userModel->expenseDetails($_REQUEST);
+    }
+
 
     
 

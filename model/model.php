@@ -59,4 +59,17 @@ class UserModule extends Database
         $allValue = $val->fetchAll(PDO::FETCH_OBJ);
         return $allValue;
     }
+
+    public function expenseDetails($expenseDetails){
+        var_dump($expenseDetails);
+        $userId = $expenseDetails['id'];
+        $dateVal = $expenseDetails['dateVal'];
+        $transactionValue = $expenseDetails['transactionValue'];
+        $categoryInp = $expenseDetails['categoryInp'];
+        $AmountInputVal = $expenseDetails['AmountInputVal'];
+        $descriptionInputVal = $expenseDetails['descriptionInputVal'];
+
+        $insert = $this->db->query("INSERT INTO income_expenses (user_id,amount,description,category_id,transaction_id,date,transaction_mode) VALUES ('$userId','$AmountInputVal','$descriptionInputVal','$categoryInp',2,'$dateVal','$transactionValue')");
+        // header('location:/income');
+    }
 }

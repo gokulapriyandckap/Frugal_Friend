@@ -17,6 +17,16 @@ create table category(
                          updated_at timestamp
 );
 
+INSERT INTO `category`(`id`, `name`, `created_at`, `updated_at`) VALUES (1,'Clothing',now(),now());
+INSERT INTO `category`(`id`, `name`, `created_at`, `updated_at`) VALUES (2,'Education',now(),now());
+INSERT INTO `category`(`id`, `name`, `created_at`, `updated_at`) VALUES (3,'Food',now(),now());
+INSERT INTO `category`(`id`, `name`, `created_at`, `updated_at`) VALUES (4,'Gifts',now(),now());
+INSERT INTO `category`(`id`, `name`, `created_at`, `updated_at`) VALUES (5,'Grocery',now(),now());
+INSERT INTO `category`(`id`, `name`, `created_at`, `updated_at`) VALUES (6,'Home Utilities',now(),now());
+INSERT INTO `category`(`id`, `name`, `created_at`, `updated_at`) VALUES (7,'Recharge',now(),now());
+INSERT INTO `category`(`id`, `name`, `created_at`, `updated_at`) VALUES (8,'Rent',now(),now());
+INSERT INTO `category`(`id`, `name`, `created_at`, `updated_at`) VALUES (9,'Health',now(),now());
+
 create table transaction_type(
                                  id int not null AUTO_INCREMENT PRIMARY KEY,
                                  name varchar(255),

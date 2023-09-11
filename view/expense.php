@@ -5,11 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet" href="../CSS/report.css">
-  <title>Report page</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="../CSS/income.css">
+  
+  <script src="https://kit.fontawesome.com/53c4033439.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <!-- For date picker -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <title>home page</title>
 </head>
 
 <body style="background-color: #F4F7FA;">
@@ -23,7 +31,7 @@
     </a>
     <ul class="space-y-2 font-medium">
       <li>
-        <a href="/home"
+        <a href="./home"
           class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
           <svg
             class="w-5 h-5 text-white-500 transition duration-75 dark:text-white-400 group-hover:text-white-900 dark:group-hover:text-white"
@@ -39,7 +47,7 @@
       </li>
       <li>
         <a href="/report"
-          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" style="background-color: #316AA7;">
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
             stroke="currentColor" className="w-6 h-6" style="width: 26px;">
             <path strokeLinecap="round" strokeLinejoin="round"
@@ -64,7 +72,7 @@
           </div>
           <div class="btnDiv">
             <button class="material-symbols-outlined expensesSymble">trending_down</button>
-            <a href="/expense" class="atag Expenses">Expenses</a>
+            <a href="#" class="atag Expenses">Expenses</a>
           </div>
         </div>
       </li>
@@ -84,65 +92,65 @@
   </div>
 </aside>
   <!-- main contant -->
-  <!-- reportPage -->
-  <div class="p-4 sm:ml-64">
-    <div class="reportContainer">
-      <div class="reportContent">
-        <div class="topPortion">
-          <h3 class="transactionHeading">Transaction</h3>
-          <div class="rightSide">
-            <input class="searchBar" type="search" placeholder="Search for anything..">
-            <button class="exportBtn">EXPORT</button>
+  <div class="p-10 sm:ml-64 relative" style="display: flex;">
+    <!-- Income form-->
+    <div class="incomeContainer">
+      <div class="incomeDetails">
+        <h1 class="transactionHeading">Transaction Mode</h1>
+        <div class="transactionType_buttons_div">
+          <button class="transactionType_buttons" value="Cash" >Cash</button>
+          <button class="transactionType_buttons" value="Card">Card</button>
+          <button class="transactionType_buttons" value="Bank">Bank</button>
+        </div>
+        <div class="inputContainer">
+          <div class="divDate">
+            <input type="datetime-local" class="inputsFeild date" placeholder="06-08-2023">
+          </div>
+          <div>
+            <input type="text" name="Category-input" id="Category-input" required="required" class="input" >
+            <label for="Category-input" id="Category-label" class="label">Category</label>
+          </div>
+          <div>
+            <input type="number" name="Amount-input" id="Amount-input" required="required" class="input">
+            <label for="Amount-input" class="label">Amount</label>
+          </div>
+          <div class="divdetails">
+            <input type="text" class="inputsFeild detail" placeholder="Enter Details (Bill No, Quentity)">
+          </div>
+          <div class="saveButton_div">
+            <button class="save_and_newButton">SAVE AND NEW</button>
+            <button class="saveButton" value = <?php echo $usrenameSignup;?> <?= $_SESSION['userid']?>  >SAVE</button>
           </div>
         </div>
-        <div class="topPortion2">
-          <div class="divExpenses inputs">
-            <input type="radio" class="input">
-            <label for="">Expenses</label>
-          </div>
-          <div class="divIncomes inputs">
-            <input type="radio" class="input">
-            <label for="">Incomes</label>
-          </div>
-          <div class="divTransaction inputs">
-            <input type="radio" class="input">
-            <label for="">All Transaction</label>
-          </div>
-          <span class="material-symbols-outlined list" style="color:#25384F; ">filter_list</span>
-        </div>
-        <div class="topPortion3">
-          <div class="divElaments">
-            <span class="material-symbols-outlined Bg" style="color:#25384F;">arrow_back</span>
-            <h3 class="month">Augest</h3>
-            <span class="material-symbols-outlined Bg" style="color:#25384F;">arrow_forward</span>
+      </div>
+    </div>
+    <!-- other details -->
+    <div class="others Category relative p-8 " style="margin-left: 30px;" hidden>
+      <div class="categoryDiv ">
+        <div class="allCategory_container">
+          <h2 class="font-medium text-2xl">Select Category</h2>
+          <div class="categoryLists "></div>
+          <div class="plus-btn w-12 h-12">
+            <span class="material-symbols-outlined categoryAddicon ">add</span>
           </div>
         </div>
-        <div class="paymentDetails">
-          <table class="report">
-            <tr class="tableHeading">
-              <th>Category</th>
-              <th>Payment Type</th>
-              <th>Description</th>
-              <th>Date</th>
-              <th>Amount</th>
-              <th>Balance</th>
-            </tr>
-            <?php foreach ($reportDetails as  $value) : ?>
-            <tr>
-              <td><?php echo $value['category_id'] ?></td>
-              <td><?php echo $value['transaction_mode'] ?></td>
-              <td><?php echo $value['description'] ?></td>
-              <td><?php echo $value['date'] ?></td>
-              <td><?php echo $value['amount'] ?></td>
-              <td><?php echo $value['description'] ?></td>
-            </tr>
-            <?php endforeach; ?>
-          </table>
+        <div class="newCategory_Container">
+          <div class="categoryBox">
+            <span class="material-symbols-outlined closeCategorybox">close</span>
+              <div>
+                <input type="text" name="newCategory-input" id="Category-input" required="required" class="newCategory">
+                <label for="newCategory-input" class="newCategory_lable">Category</label>
+              </div>
+            <button class="categorySubbmit_button">ADD CATEGORY</button>
+          </div>    
         </div>
       </div>
     </div>
   </div>
-<script src="../Js/report.js"></script>
-
 </body>
+<!-- Script for Date picker --->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script src="../Js/expense.js"></script>
+
 </html>

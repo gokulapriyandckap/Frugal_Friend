@@ -72,7 +72,7 @@
           </div>
           <div class="btnDiv">
             <button class="material-symbols-outlined expensesSymble">trending_down</button>
-            <a href="#" class="atag Expenses">Expenses</a>
+            <a href="/expense" class="atag Expenses">Expenses</a>
           </div>
         </div>
       </li>
